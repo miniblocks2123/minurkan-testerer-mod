@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "testerer:block/c4",
   "textures": {
     "all": "testerer:block/c4"
   }
