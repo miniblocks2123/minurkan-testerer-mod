@@ -22,6 +22,6 @@ public class Testerer implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
-		LOGGER.info(Color.ORANGE + "Hohonohonhon");
+		LOGGER.warn("Hohonohonhon");
 	}
 }
