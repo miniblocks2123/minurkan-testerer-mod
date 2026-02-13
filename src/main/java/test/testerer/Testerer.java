@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import test.testerer.block.ModBlocks;
 
 import java.awt.*;
 
@@ -23,5 +24,11 @@ public class Testerer implements ModInitializer {
 
 		LOGGER.info("Hello Fabric world!");
 		LOGGER.warn("Hohonohonhon");
+
+		ModBlocks.initialise();
 	}
 }
+
+// it does
+// its even simpler
+// Tasty, show me
