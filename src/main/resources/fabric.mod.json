@@ -20,7 +20,10 @@
 		],
 		"client": [
 			"test.testerer.TestererClient"
-		]
+		],
+        "fabric-datagen": [
+          "test.testerer.TestererDataGenerator"
+        ]
 	},
 	"mixins": [
 		"testerer.mixins.json",
