@@ -19,7 +19,3 @@ public class Testerer implements ModInitializer {
 		ModBlocks.initialise();
 	}
 }
-
-// it does
-// its even simpler
-// Tasty, show me

@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import org.jetbrains.annotations.NotNull;
 import test.testerer.ModLogger;
 import test.testerer.Testerer;
-import test.testerer.block.custom.C4Block;
+import test.testerer.block.custom.C4;
 
 import java.util.function.Function;
 
@@ -22,7 +22,7 @@ import java.util.function.Function;
 public class ModBlocks {
     // now, just do
     public static final Block TESTERER_BLOCK_YAY = register("testerer_block_yay", Block::new, BlockBehaviour.Properties.of().sound(SoundType.AMETHYST), true);
-    public static final C4Block C4 = register("c4", C4Block::new, BlockBehaviour.Properties.of().sound(SoundType.CHAIN), true);
+    public static final C4 C4 = register("c4", C4::new, BlockBehaviour.Properties.of().sound(SoundType.CHAIN), true);
 
     private static <T extends Block> T register(String name, Function<BlockBehaviour.Properties, T> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
         ResourceKey<@NotNull Block> blockKey = keyOfBlock(name);
