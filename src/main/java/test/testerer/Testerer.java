@@ -5,6 +5,8 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.awt.*;
+
 public class Testerer implements ModInitializer {
 	public static final String MOD_ID = "testerer";
 
@@ -19,6 +21,7 @@ public class Testerer implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("test black colour");
+		LOGGER.info("Hello Fabric world!");
+		LOGGER.warn("Hohonohonhon");
 	}
 }
