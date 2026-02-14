@@ -1,7 +1,11 @@
 {
   "variants": {
-    "": {
-      "model": "testerer:block/c4"
-    }
+    "facing=north": { "model": "testerer:block/c4", "x": 90, "y": 0 },
+    "facing=south": { "model": "testerer:block/c4", "x": 270, "y": 0 },
+    "facing=east":  { "model": "testerer:block/c4", "x": 90, "y": 90 },
+    "facing=west":  { "model": "testerer:block/c4", "x": 90, "y": 270 },
+
+    "facing=up":    { "model": "testerer:block/c4", "x": 0,   "y": 0 },
+    "facing=down":  { "model": "testerer:block/c4", "x": 180, "y": 0 }
   }
 }

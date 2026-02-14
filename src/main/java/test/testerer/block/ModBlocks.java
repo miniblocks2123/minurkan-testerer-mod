@@ -22,7 +22,15 @@ import java.util.function.Function;
 public class ModBlocks {
     // now, just do
     public static final Block TESTERER_BLOCK_YAY = register("testerer_block_yay", Block::new, BlockBehaviour.Properties.of().sound(SoundType.AMETHYST), true);
-    public static final C4 C4 = register("c4", C4::new, BlockBehaviour.Properties.of().sound(SoundType.CHAIN), true);
+
+    public static final C4 C4 = register(
+            "c4",
+            C4::new,
+            BlockBehaviour.Properties.of()
+                    .sound(SoundType.CHAIN)
+                    .dynamicShape(),
+            true
+    );
 
     private static <T extends Block> T register(String name, Function<BlockBehaviour.Properties, T> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
         ResourceKey<@NotNull Block> blockKey = keyOfBlock(name);
