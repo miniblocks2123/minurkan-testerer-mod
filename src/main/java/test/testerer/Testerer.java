@@ -2,6 +2,8 @@ package test.testerer;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.minecraft.resources.Identifier;
+import org.jetbrains.annotations.NotNull;
 import test.testerer.block.ModBlockEntities;
 import test.testerer.block.ModBlocks;
 import test.testerer.item.ModItems;
@@ -22,4 +24,8 @@ public class Testerer implements ModInitializer {
 		ModBlocks.initialise();
 		ModItems.initialise();
 	}
+
+    public static @NotNull Identifier id(@NotNull String path) {
+        return Identifier.fromNamespaceAndPath(MOD_ID, path);
+    }
 }
