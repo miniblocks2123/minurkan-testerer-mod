@@ -2,6 +2,7 @@ package test.testerer;
 
 import net.fabricmc.api.ModInitializer;
 
+import test.testerer.block.ModBlockEntities;
 import test.testerer.block.ModBlocks;
 
 public class Testerer implements ModInitializer {
@@ -16,6 +17,7 @@ public class Testerer implements ModInitializer {
 		ModLogger.LOGGER.info("Hello Fabric world!");
 		ModLogger.LOGGER.warn("Hohonohonhon");
 
+        ModBlockEntities.initialise();
 		ModBlocks.initialise();
 	}
 }
