@@ -13,19 +13,16 @@ import test.testerer.Testerer;
 import test.testerer.block.custom.C4BlockEntity;
 
 public class ModBlockEntities {
-    public static final BlockEntityType<@NotNull C4BlockEntity> C4_BLOCK_ENTITY =
-            register("counter", C4BlockEntity::new, ModBlocks.C4);
+	private static <T extends BlockEntity> BlockEntityType<@NotNull T> register(String name, FabricBlockEntityTypeBuilder.Factory<? extends @NotNull T> entityFactory, Block... blocks) {
+		Identifier id = Testerer.id(name);
+		return Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, id, FabricBlockEntityTypeBuilder.<T>create(entityFactory, blocks).build());
+	}
 
-    private static <T extends BlockEntity> BlockEntityType<@NotNull T> register(
-            String name,
-            FabricBlockEntityTypeBuilder.Factory<? extends @NotNull T> entityFactory,
-            Block... blocks
-    ) {
-        Identifier id = Testerer.id(name);
-        return Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, id, FabricBlockEntityTypeBuilder.<T>create(entityFactory, blocks).build());
-    }
+	public static final BlockEntityType<@NotNull C4BlockEntity> C4_BLOCK_ENTITY = register("counter", C4BlockEntity::new, ModBlocks.C4);
 
-    public static void initialise() {
-        ModLogger.devLogger("initialising mod block entities");
-    }
+	public static void initialise() {
+		ModLogger.devLogger("initialising mod block entities");
+	}
+
+
 }

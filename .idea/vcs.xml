@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+  </component>
+    <component name="VcsConfiguration">
+        <option name="AUTOMATICALLY_PERFORM_ACTIONS_BEFORE_COMMIT" value="true" />
+        <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+        <option name="PERFORM_REFORMAT_BEFORE_COMMIT" value="true" />
+        <option name="PERFORM_OPTIMIZE_IMPORTS_BEFORE_COMMIT" value="true" />
+        <option name="PERFORM_REARRANGE_BEFORE_COMMIT" value="false" />
+    </component>
+</project>

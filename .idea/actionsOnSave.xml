@@ -1,0 +1,9 @@
+<project version="4">
+    <component name="ActionsOnSave">
+        <option name="enabled" value="true" />
+        <option name="reformatCode" value="true" />
+        <option name="optimizeImports" value="true" />
+        <option name="rearrangeCode" value="false" />
+        <option name="runInspections" value="false" />
+    </component>
+</project>

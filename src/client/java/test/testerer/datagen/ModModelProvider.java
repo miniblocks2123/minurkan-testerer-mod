@@ -7,22 +7,22 @@ import net.minecraft.client.data.models.ItemModelGenerators;
 import test.testerer.block.ModBlocks;
 
 public class ModModelProvider extends FabricModelProvider {
-    public ModModelProvider(FabricDataOutput output) {
-        super(output);
-    }
+	public ModModelProvider(FabricDataOutput output) {
+		super(output);
+	}
 
-    @Override
-    public void generateBlockStateModels(BlockModelGenerators generator) {
-        generator.createTrivialCube(ModBlocks.C4);
-        generator.createTrivialCube(ModBlocks.TESTERER_BLOCK_YAY);
-    }
+	@Override
+	public void generateBlockStateModels(BlockModelGenerators generator) {
+		generator.createTrivialCube(ModBlocks.C4);
+		generator.createTrivialCube(ModBlocks.TESTERER_BLOCK_YAY);
+	}
 
-    @Override
-    public void generateItemModels(ItemModelGenerators generator) {
-    }
+	@Override
+	public void generateItemModels(ItemModelGenerators generator) {
+	}
 
-    @Override
-    public String getName() {
-        return "ModModelProvider";
-    }
+	@Override
+	public String getName() {
+		return "ModModelProvider";
+	}
 }

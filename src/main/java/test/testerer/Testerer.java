@@ -1,7 +1,6 @@
 package test.testerer;
 
 import net.fabricmc.api.ModInitializer;
-
 import net.minecraft.resources.Identifier;
 import org.jetbrains.annotations.NotNull;
 import test.testerer.block.ModBlockEntities;
@@ -10,6 +9,10 @@ import test.testerer.item.ModItems;
 
 public class Testerer implements ModInitializer {
 	public static final String MOD_ID = "testerer";
+
+	public static @NotNull Identifier id(@NotNull String path) {
+		return Identifier.fromNamespaceAndPath(MOD_ID, path);
+	}
 
 	@Override
 	public void onInitialize() {
@@ -20,12 +23,8 @@ public class Testerer implements ModInitializer {
 		ModLogger.LOGGER.info("Hello Fabric world!");
 		ModLogger.LOGGER.warn("Hohonohonhon");
 
-        ModBlockEntities.initialise();
+		ModBlockEntities.initialise();
 		ModBlocks.initialise();
 		ModItems.initialise();
 	}
-
-    public static @NotNull Identifier id(@NotNull String path) {
-        return Identifier.fromNamespaceAndPath(MOD_ID, path);
-    }
 }
