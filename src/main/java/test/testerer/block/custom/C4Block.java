@@ -22,6 +22,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
 public class C4Block extends BaseEntityBlock {
+    public static final MapCodec<C4Block> CODEC = simpleCodec(C4Block::new);
     public static final EnumProperty<@NotNull Direction> FACING = BlockStateProperties.FACING;
 
     private static final VoxelShape SHAPE_NORTH = Block.box(4, 2, 13, 12, 14, 16);
@@ -38,7 +39,7 @@ public class C4Block extends BaseEntityBlock {
 
     @Override
     protected MapCodec<? extends BaseEntityBlock> codec() {
-        return simpleCodec(C4Block::new);
+        return CODEC;
     }
 
     @Override
