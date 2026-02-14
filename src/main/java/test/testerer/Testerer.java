@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import test.testerer.block.ModBlockEntities;
 import test.testerer.block.ModBlocks;
+import test.testerer.item.ModItems;
 
 public class Testerer implements ModInitializer {
 	public static final String MOD_ID = "testerer";
@@ -19,5 +20,6 @@ public class Testerer implements ModInitializer {
 
         ModBlockEntities.initialise();
 		ModBlocks.initialise();
+		ModItems.initialise();
 	}
 }
