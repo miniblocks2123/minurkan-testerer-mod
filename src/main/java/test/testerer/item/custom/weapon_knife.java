@@ -1,14 +1,13 @@
 package test.testerer.item.custom;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import test.testerer.util.Utils;
 
 public class weapon_knife extends Item {
 	public weapon_knife(Properties properties) {
@@ -20,10 +19,9 @@ public class weapon_knife extends Item {
 	public void hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
 		Level level = attacker.level();
 
-		DamageSource dmgsource = new DamageSource(level.registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).get(DamageTypes.GENERIC.identifier()).get());
+		var damageSource = Utils.createDamageSource(level, DamageTypes.GENERIC);
 
-
-		target.hurt(dmgsource, 1000);
+		target.hurt(damageSource, 1000);
 
 		stack.consume(1, attacker);
 
