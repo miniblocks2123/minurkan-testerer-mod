@@ -3,8 +3,12 @@ package test.testerer.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -22,6 +26,9 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.Nullable;
+
+import java.awt.*;
 
 public class C4Block extends BaseEntityBlock {
 	public static final EnumProperty<@NotNull Direction> FACING = BlockStateProperties.FACING;
@@ -90,9 +97,9 @@ public class C4Block extends BaseEntityBlock {
 		return new C4BlockEntity(pos, state);
 	}
 
+
 	@Override
 	protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-		player.jumpFromGround(); // just a placeholder
 		return InteractionResult.SUCCESS;
 	}
 }

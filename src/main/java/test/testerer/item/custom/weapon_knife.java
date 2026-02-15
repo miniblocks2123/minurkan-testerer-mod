@@ -1,6 +1,10 @@
 package test.testerer.item.custom;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
@@ -19,9 +23,14 @@ public class weapon_knife extends Item {
 	public void hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
 		Level level = attacker.level();
 
-		var damageSource = Utils.createSimpleDamageSource(level, DamageTypes.GENERIC);
+		Holder<DamageType> dmgType = Utils.getDamageTypeHolder(level, DamageTypes.GENERIC);
 
-		target.hurt(damageSource, 1000);
+		DamageSource dmgsource = new DamageSource(dmgType, target, attacker);
+
+		if (level instanceof ServerLevel serverLevel) {
+			target.hurtServer(serverLevel, dmgsource, 1000);
+		}
+
 
 		stack.consume(1, attacker);
 
