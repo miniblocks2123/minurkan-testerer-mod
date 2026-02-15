@@ -19,7 +19,7 @@ public class weapon_knife extends Item {
 	public void hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
 		Level level = attacker.level();
 
-		var damageSource = Utils.createDamageSource(level, DamageTypes.GENERIC);
+		var damageSource = Utils.createSimpleDamageSource(level, DamageTypes.GENERIC);
 
 		target.hurt(damageSource, 1000);
 
