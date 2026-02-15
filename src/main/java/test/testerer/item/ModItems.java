@@ -13,7 +13,7 @@ import java.util.function.Function;
 
 public class ModItems {
 
-	public static final weapon_knife WEAPON_KNIFE = register("knife", weapon_knife::new, new Item.Properties().durability(1).stacksTo(1));
+	public static final weapon_knife WEAPON_KNIFE = register("knife", weapon_knife::new, new Item.Properties().durability(-1).stacksTo(1));
 
 
 	public static <GenericItem extends Item> GenericItem register(String name, Function<Item.Properties, GenericItem> itemFactory, Item.Properties settings) {
